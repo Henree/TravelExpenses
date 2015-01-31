@@ -45,7 +45,8 @@
         android:layout_height="wrap_content"
         android:layout_below="@+id/ClaimFinishDate"
         android:layout_centerHorizontal="true"
-        android:text="@string/Add" />
+        android:text="@string/Add" 
+        android:onClick="addClaims"/>
 
     <TextView
         android:id="@+id/addClaimsTitle"

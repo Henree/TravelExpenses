@@ -9,12 +9,15 @@ import java.util.Calendar;
 import android.app.DatePickerDialog;
 import android.app.Dialog;
 import android.app.DialogFragment;
+import android.content.Intent;
 import android.support.v4.app.FragmentActivity;
 import android.view.View;
 import android.widget.DatePicker;
 import android.widget.EditText;
+import android.widget.Toast;
 
-public class AddClaimActivity extends FragmentActivity {
+public class AddClaimActivity extends FragmentActivity 
+{
 
 	static EditText StartDate;
 	static EditText FinishDate;
@@ -22,7 +25,8 @@ public class AddClaimActivity extends FragmentActivity {
 	public static boolean IsStart = false;
 	
 	@Override
-	protected void onCreate(Bundle savedInstanceState) {
+	protected void onCreate(Bundle savedInstanceState) 
+	{
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.addclaim);
 		StartDate = (EditText) findViewById(R.id.ClaimStartDate);
@@ -96,6 +100,11 @@ public class AddClaimActivity extends FragmentActivity {
 			FinishDate.setText((month+1) + "/" + day + "/" + year);
 			}
 		}
-
-}
+	}
+	public void addClaims(View view)
+	{
+		Toast.makeText(this, "New Claim Made", Toast.LENGTH_SHORT).show();
+		Intent intent = new Intent(AddClaimActivity.this, CurrentClaimActivity.class);
+		startActivity(intent);
+	}
 }

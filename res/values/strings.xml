@@ -22,5 +22,6 @@
     <string name="title_activity_add_claim">AddClaimActivity</string>
     <string name="title_activity_add_claims">AddClaimsActivity</string>
     <string name="title_activity_add_expense">Add Expense</string>
+    <string name="title_activity_current_claim">Current Claim</string>
 
 </resources>

@@ -37,7 +37,8 @@
         android:layout_alignLeft="@+id/CurrentExpensesList"
         android:layout_alignParentBottom="true"
         android:layout_alignRight="@+id/CurrentExpensesList"
-        android:text="@string/NewClaim" />
+        android:text="@string/NewClaim" 
+    	android:onClick="addclaimbutton" />
 
     
 </RelativeLayout>

@@ -19,9 +19,12 @@ limitations under the License.
 package ca.ualberta.cs.travelexpenses;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.Toast;
 
 public class MainActivity extends Activity {
 
@@ -49,4 +52,12 @@ public class MainActivity extends Activity {
 		}
 		return super.onOptionsItemSelected(item);
 	}
+	
+	public void addclaimbutton(View view)
+	{
+		Toast.makeText(this, "going to claim", Toast.LENGTH_SHORT).show();
+		Intent intent = new Intent(MainActivity.this, AddClaimActivity.class);
+		startActivity(intent);
+	}
+	
 }

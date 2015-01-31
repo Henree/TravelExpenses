@@ -34,19 +34,20 @@
         android:id="@+id/CurrentExpensesList"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_above="@+id/ClaimsAddButton"
+        android:layout_above="@+id/NewExpenseButton"
         android:layout_alignParentLeft="true"
         android:layout_below="@+id/CurrentClaimsTitle" >
 
     </ListView>
 
     <Button
-        android:id="@+id/ClaimsAddButton"
+        android:id="@+id/NewExpenseButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_above="@+id/EditExpenseButton"
         android:layout_alignParentLeft="true"
         android:layout_alignParentRight="true"
-        android:text="@string/NewExpense" />
+        android:text="@string/NewExpense" 
+        android:onClick="newexpense"/>
 
 </RelativeLayout>
