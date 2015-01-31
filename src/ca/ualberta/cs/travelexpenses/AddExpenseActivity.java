@@ -1,17 +1,20 @@
 package ca.ualberta.cs.travelexpenses;
 
 import java.util.Calendar;
+
 import ca.ualberta.cs.travelexpenses.R;
 import android.app.Activity;
 import android.app.DatePickerDialog;
 import android.app.Dialog;
 import android.app.DialogFragment;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.DatePicker;
 import android.widget.EditText;
+import android.widget.Toast;
 
 public class AddExpenseActivity extends Activity {
 
@@ -71,11 +74,29 @@ public class AddExpenseActivity extends Activity {
 		}
 
 	public void onDateSet(DatePicker view, int year, int month, int day) 
-		{
+	{
 		// Do something with the date chosen by the user
 		Date.setText((month+1) + "/" + day + "/" + year);
 		}
 
-}
+    }
+
+	public void addExpense(View view)
+	{
+		Toast.makeText(this, "New Expense Made", Toast.LENGTH_SHORT).show();
+		ExpenseListController el = new ExpenseListController();
+		EditText textView = (EditText) findViewById(R.id.ExpenseName);
+		EditText textView2 = (EditText) findViewById(R.id.ExpenseDate);
+		EditText textView3 = (EditText) findViewById(R.id.ExpenseCat);
+		EditText textView4 = (EditText) findViewById(R.id.ExpenseCost);
+		EditText textView5 = (EditText) findViewById(R.id.ExpenseCurrency);
+		EditText textView6 = (EditText) findViewById(R.id.ExpenseDetail);
+		String costView = textView4.getText().toString();
+		el.addExpense(new Expenses(textView.getText().toString(), textView2.getText().toString(), 
+					textView3.getText().toString(), Double.parseDouble(costView),
+					textView5.getText().toString(), textView6.getText().toString()));
+		Intent intent = new Intent(AddExpenseActivity.this, CurrentClaimActivity.class);
+		startActivity(intent);
+	}
 }
 
