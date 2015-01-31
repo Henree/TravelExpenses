@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" >
+
+    <EditText
+        android:id="@+id/addClaimName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="46dp"
+        android:ems="10"
+        android:text="@string/Name" >
+
+        <requestFocus />
+    </EditText>
+
+    <EditText
+        android:id="@+id/ClaimStartDate"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentRight="true"
+        android:layout_below="@+id/addClaimName"
+        android:ems="10"
+        android:inputType="date"
+        android:text="@string/StartDate" />
+
+    <EditText
+        android:id="@+id/ClaimFinishDate"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentRight="true"
+        android:layout_below="@+id/ClaimStartDate"
+        android:ems="10"
+        android:inputType="date"
+        android:text="@string/FinishDate" />
+
+    <Button
+        android:id="@+id/addClaims"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/ClaimFinishDate"
+        android:layout_centerHorizontal="true"
+        android:text="@string/Add" />
+
+    <TextView
+        android:id="@+id/addClaimsTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="14dp"
+        android:text="@string/NewClaim"
+        android:textAppearance="?android:attr/textAppearanceLarge" />
+
+</RelativeLayout>
