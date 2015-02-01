@@ -6,6 +6,7 @@ public class Claims
 	private String Name;
 	private String Start;
 	private String Finish;
+	private String Status = "Ongoing";
 
 	public Claims(String Name, String Start, String Finish) 
 	{
@@ -26,6 +27,10 @@ public class Claims
 	public String toString()
 	{
 		return getName();
+	}
+	public String toStatus()
+	{
+		return this.Status;
 	}
 
 }

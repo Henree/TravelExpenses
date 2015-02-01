@@ -87,12 +87,14 @@ public class AddClaimActivity extends FragmentActivity
 	{
 		Toast.makeText(this, "New Claim Made", Toast.LENGTH_SHORT).show();
 		ClaimListController cl = new ClaimListController();
-		EditText textView = (EditText) findViewById(R.id.addClaimName);
+		EditText textView = (EditText) findViewById(R.id.ClaimName);
 		EditText textView2 = (EditText) findViewById(R.id.ClaimStartDate);
 		EditText textView3 = (EditText) findViewById(R.id.ClaimFinishDate);
 		cl.addClaim(new Claims(textView.getText().toString(),
 				textView2.getText().toString(), textView3.getText().toString()));
 		Intent intent = new Intent(AddClaimActivity.this, CurrentClaimActivity.class);
 		startActivity(intent);
+		finish();
+		
 	}
 }

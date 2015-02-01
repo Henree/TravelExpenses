@@ -14,7 +14,7 @@
         android:id="@+id/MainScreenTitle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignLeft="@+id/AddClaimsButton"
+        android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
         android:text="@string/CurrentClaims"
         android:textAppearance="?android:attr/textAppearanceLarge" />
@@ -24,8 +24,8 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_above="@+id/AddClaimsButton"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentRight="true"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true"
         android:layout_below="@+id/MainScreenTitle" >
 
     </ListView>
@@ -34,9 +34,9 @@
         android:id="@+id/AddClaimsButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignLeft="@+id/ClaimList"
+        android:layout_alignParentStart="true"
         android:layout_alignParentBottom="true"
-        android:layout_alignRight="@+id/ClaimList"
+        android:layout_alignParentEnd="true"
         android:text="@string/NewClaim" 
     	android:onClick="addclaimbutton" />
 

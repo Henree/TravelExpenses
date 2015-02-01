@@ -4,11 +4,11 @@
     android:layout_height="match_parent" >
 
     <EditText
-        android:id="@+id/addClaimName"
+        android:id="@+id/AddClaimName"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
         android:layout_marginTop="46dp"
         android:ems="10"
@@ -21,9 +21,9 @@
         android:id="@+id/ClaimStartDate"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentRight="true"
-        android:layout_below="@+id/addClaimName"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true"
+        android:layout_below="@+id/AddClaimName"
         android:ems="10"
         android:hint="@string/StartDate"
         android:inputType="date" />
@@ -32,8 +32,8 @@
         android:id="@+id/ClaimFinishDate"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentRight="true"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true"
         android:layout_below="@+id/ClaimStartDate"
         android:ems="10"
         android:hint="@string/FinishDate"
