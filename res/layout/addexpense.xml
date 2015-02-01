@@ -11,8 +11,8 @@
         android:layout_alignParentRight="true"
         android:layout_below="@+id/ExpenseName"
         android:ems="10"
-        android:inputType="date"
-        android:text="@string/Date" >
+        android:hint="@string/Date"
+        android:inputType="date" >
 
         <requestFocus />
     </EditText>
@@ -25,7 +25,7 @@
         android:layout_alignParentRight="true"
         android:layout_below="@+id/ExpenseDate"
         android:ems="10"
-        android:text="@string/Category" />
+        android:hint="@string/Category" />
 
     <EditText
         android:id="@+id/ExpenseName"
@@ -36,7 +36,7 @@
         android:layout_alignParentTop="true"
         android:layout_marginTop="56dp"
         android:ems="10"
-        android:text="@string/Name" />
+        android:hint="@string/Name" />
 
     <EditText
         android:id="@+id/ExpenseCost"
@@ -46,8 +46,8 @@
         android:layout_alignParentRight="true"
         android:layout_below="@+id/ExpenseCat"
         android:ems="10"
-        android:inputType="numberDecimal"
-        android:text="@string/Cost" />
+        android:hint="@string/action_settings"
+        android:inputType="numberDecimal" />
 
     <EditText
         android:id="@+id/ExpenseCurrency"
@@ -57,7 +57,7 @@
         android:layout_alignParentRight="true"
         android:layout_below="@+id/ExpenseCost"
         android:ems="10"
-        android:text="@string/Currency" />
+        android:hint="@string/action_settings" />
 
     <EditText
         android:id="@+id/ExpenseDetail"
@@ -67,8 +67,8 @@
         android:layout_alignParentRight="true"
         android:layout_below="@+id/ExpenseCurrency"
         android:ems="10"
-        android:inputType="textMultiLine"
-        android:text="@string/Description" />
+        android:hint="@string/action_settings"
+        android:inputType="textMultiLine" />
 
     <Button
         android:id="@+id/ExpenseAdd"

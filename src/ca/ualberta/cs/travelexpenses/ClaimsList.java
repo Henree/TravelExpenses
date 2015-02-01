@@ -22,7 +22,7 @@ public class ClaimsList
 	{
 		claimsList.add(claims);
 	}
-	
+
 	public void deleteClaims(Claims claims)
 	{
 		claimsList.remove(claims);

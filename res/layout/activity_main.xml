@@ -20,7 +20,7 @@
         android:textAppearance="?android:attr/textAppearanceLarge" />
 
     <ListView
-        android:id="@+id/CurrentExpensesList"
+        android:id="@+id/ClaimList"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_above="@+id/AddClaimsButton"
@@ -34,9 +34,9 @@
         android:id="@+id/AddClaimsButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignLeft="@+id/CurrentExpensesList"
+        android:layout_alignLeft="@+id/ClaimList"
         android:layout_alignParentBottom="true"
-        android:layout_alignRight="@+id/CurrentExpensesList"
+        android:layout_alignRight="@+id/ClaimList"
         android:text="@string/NewClaim" 
     	android:onClick="addclaimbutton" />
 

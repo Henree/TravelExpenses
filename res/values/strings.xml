@@ -10,11 +10,11 @@
     <string name="NewExpense">Add New Expense</string>
     <string name="NewClaim">Add New Claim</string>
     <string name="CurrentClaims">Current Claims</string>
-    <string name="FinishDate">MM/DD/YYYY Finish</string>
-    <string name="StartDate">MM/DD/YYYY Start</string>
+    <string name="FinishDate">Finish</string>
+    <string name="StartDate">Start</string>
     <string name="Name">Name</string>
     <string name="Add">Add</string>
-    <string name="Date">MM/DD/YYYY</string>
+    <string name="Date">Date</string>
     <string name="Category">Category eg: food or cab</string>
     <string name="Cost">Cost eg: 4.20</string>
     <string name="Currency">Currency eg: CAD, USD or EURO</string>

@@ -25,6 +25,7 @@ public class AddExpenseActivity extends Activity {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.addexpense);
 		Date = (EditText) findViewById(R.id.ExpenseDate);
+		set_on_click();
 	}
 
 	@Override
@@ -44,6 +45,14 @@ public class AddExpenseActivity extends Activity {
 			return true;
 		}
 		return super.onOptionsItemSelected(item);
+	}
+	private void set_on_click() {
+		Date.setOnClickListener(new View.OnClickListener() {
+			@Override
+			public void onClick(View v) {
+				showDatePickerDialog(v);
+			}
+			});
 	}
 	
 	

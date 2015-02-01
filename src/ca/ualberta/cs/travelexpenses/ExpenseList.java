@@ -23,6 +23,7 @@ public class ExpenseList
 		expenseList.add(expenses);
 	}
 	
+
 	public void deleteExpense(Expenses expenses)
 	{
 		expenseList.remove(expenses);

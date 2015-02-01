@@ -13,7 +13,7 @@
         android:textAppearance="?android:attr/textAppearanceLarge" />
 
     <ListView
-        android:id="@+id/CurrentExpensesList"
+        android:id="@+id/ClaimList"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_above="@+id/NewExpenseButton"

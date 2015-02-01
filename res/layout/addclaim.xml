@@ -12,7 +12,7 @@
         android:layout_alignParentTop="true"
         android:layout_marginTop="46dp"
         android:ems="10"
-        android:text="@string/Name" >
+        android:hint="@string/Name" >
 
         <requestFocus />
     </EditText>
@@ -25,8 +25,8 @@
         android:layout_alignParentRight="true"
         android:layout_below="@+id/addClaimName"
         android:ems="10"
-        android:inputType="date"
-        android:text="@string/StartDate" />
+        android:hint="@string/StartDate"
+        android:inputType="date" />
 
     <EditText
         android:id="@+id/ClaimFinishDate"
@@ -36,8 +36,8 @@
         android:layout_alignParentRight="true"
         android:layout_below="@+id/ClaimStartDate"
         android:ems="10"
-        android:inputType="date"
-        android:text="@string/FinishDate" />
+        android:hint="@string/FinishDate"
+        android:inputType="date" />
 
     <Button
         android:id="@+id/addClaims"

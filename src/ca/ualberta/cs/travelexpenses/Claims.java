@@ -14,5 +14,18 @@ public class Claims
 		this.Start = Start;
 		this.Finish = Finish;
 	}
+	public String getName()
+	{
+		return this.Name;
+	}
+	public String getDateRange()
+	{
+		return this.Start + "to" + this.Finish;
+	}
+	
+	public String toString()
+	{
+		return getName();
+	}
 
 }
