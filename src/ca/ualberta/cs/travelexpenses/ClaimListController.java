@@ -2,15 +2,15 @@ package ca.ualberta.cs.travelexpenses;
 
 public class ClaimListController 
 {
-	private static ClaimsList claimList = null;
+	private static ClaimsList claimsList = null;
 	
 	static public ClaimsList getClaimsList()
 	{
-		if (claimList == null)
+		if (claimsList == null)
 		{
-			claimList = new ClaimsList();
+			claimsList = new ClaimsList();
 		}
-		return claimList;
+		return claimsList;
 	}
 
 	public void addClaim(Claims claims) {

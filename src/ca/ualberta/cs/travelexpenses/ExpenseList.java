@@ -18,18 +18,18 @@ public class ExpenseList
 		return expenseList;
 	}
 	
-	public void addExpense(Expenses expense)
+	public void addExpense(Expenses expenses)
 	{
-		expenseList.add(expense);
+		expenseList.add(expenses);
 	}
 	
-	public void deleteExpense(Expenses expense)
+	public void deleteExpense(Expenses expenses)
 	{
-		expenseList.remove(expense);
+		expenseList.remove(expenses);
 	}
 	
-	public boolean contains(Expenses expense)
+	public boolean contains(Expenses expenses)
 	{
-		return expenseList.contains(expense);
+		return expenseList.contains(expenses);
 	}
 }

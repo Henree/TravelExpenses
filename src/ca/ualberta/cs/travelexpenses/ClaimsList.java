@@ -18,19 +18,19 @@ public class ClaimsList
 		return claimsList;
 	}
 	
-	public void addClaims(Claims claim)
+	public void addClaims(Claims claims)
 	{
-		claimsList.add(claim);
+		claimsList.add(claims);
 	}
 	
-	public void deleteClaims(Claims claim)
+	public void deleteClaims(Claims claims)
 	{
-		claimsList.remove(claim);
+		claimsList.remove(claims);
 	}
 	
-	public boolean contains(Claims claim)
+	public boolean contains(Claims claims)
 	{
-		return claimsList.contains(claim);
+		return claimsList.contains(claims);
 	}
 	
 }
