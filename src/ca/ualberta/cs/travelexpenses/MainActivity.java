@@ -19,42 +19,29 @@ limitations under the License.
 package ca.ualberta.cs.travelexpenses;
 
 import java.util.ArrayList;
-import java.util.Collection;
-
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
-import android.widget.ArrayAdapter;
 import android.widget.ListView;
 import android.widget.Toast;
 
 public class MainActivity extends Activity {
 
+	public static Claims claim;
+	public ListView lv1;
+	public ClaimsList cl = new ClaimsList();
+	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_main);
-		ListView listview = (ListView) findViewById(R.id.ClaimList);
-		Collection<Claims> claims = ClaimListController.getClaimsList()
-				.getClaims();
-		final ArrayList<Claims> list = new ArrayList<Claims>(claims);
-		final ArrayAdapter<Claims> claimsAdapter = new ArrayAdapter<Claims>
-				(this, android.R.layout.simple_list_item_1, list);
-		listview.setAdapter(claimsAdapter);
-		ClaimListController.getClaimsList().addListener(new ClaimsListener () {
-			public void update()
-			{
-				list.clear();
-				Collection<Claims> claims = ClaimListController.getClaimsList()
-						.getClaims();
-				list.addAll(claims);
-				claimsAdapter.notifyDataSetChanged();
-			}
-		});
-		
+		ArrayList<Claims> claimslist = cl.getClaimList();
+		final ListView lv1 = (ListView) findViewById(R.id.AddClaimName);
+		ClaimsCustomAdapter adapter = new ClaimsCustomAdapter(this, claimslist);
+		lv1.setAdapter(adapter);
 		
 	}
 
