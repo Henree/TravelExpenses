@@ -41,13 +41,14 @@ public class AddClaimActivity extends FragmentActivity
 	//Method to show listview
 	public void onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) 
 	{
-	    inflater.inflate(R.layout.addexpense, container, false);
-	    ListView listview = (ListView) findViewById(R.id.ExpenseList);
+	    /*inflater.inflate(R.layout.addexpense, container, false);
+	    ListView listview = (ListView) findViewById(R.id.ClaimsList);
 		Collection<Claims> claims = ClaimListController.getClaimsList().getClaimList(); 
 		ArrayList list = new ArrayList<Claims>(claims);
 		ArrayAdapter<Claims> claimAdapter = new ArrayAdapter<Claims>
 				(this, android.R.layout.simple_list_item_1, list);
 		listview.setAdapter(claimAdapter);
+		*/
 	}
  
 	//Retrieved on January 30,2015 from http://developer.android.com/guide/topics/ui/controls/pickers.html
@@ -105,16 +106,15 @@ public class AddClaimActivity extends FragmentActivity
 	public void addClaims(View view)
 	{
 		Toast.makeText(this, "New Claim Made", Toast.LENGTH_SHORT).show();
-		ClaimListController cl = new ClaimListController();
+		/*ClaimListController cl = new ClaimListController();
 		EditText textView = (EditText) findViewById(R.id.AddClaimName);
 		EditText textView2 = (EditText) findViewById(R.id.ClaimStartDate);
 		EditText textView3 = (EditText) findViewById(R.id.ClaimFinishDate);
 		cl.addClaim(new Claims(textView.getText().toString(),
 				textView2.getText().toString(), textView3.getText().toString()));
+				*/
 		Intent intent = new Intent(AddClaimActivity.this, CurrentClaimActivity.class);
 		startActivity(intent);
 		finish();
-		
-		
 	}
 }

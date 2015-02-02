@@ -43,7 +43,7 @@ public class CurrentClaimActivity extends Activity {
 	
 	public void newexpense(View view)
 	{
-		Toast.makeText(this, "going to expense", Toast.LENGTH_SHORT).show();
+		Toast.makeText(this, "Going to expenses", Toast.LENGTH_SHORT).show();
 		Intent intent = new Intent(CurrentClaimActivity.this, AddExpenseActivity.class);
 		startActivity(intent);
 	}
