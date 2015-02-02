@@ -1,16 +1,23 @@
 package ca.ualberta.cs.travelexpenses;
 
 import android.os.Bundle;
+
+import java.util.ArrayList;
 import java.util.Calendar;
+import java.util.Collection;
 
 import android.app.DatePickerDialog;
 import android.app.Dialog;
 import android.app.DialogFragment;
 import android.content.Intent;
 import android.support.v4.app.FragmentActivity;
+import android.view.LayoutInflater;
 import android.view.View;
+import android.view.ViewGroup;
+import android.widget.ArrayAdapter;
 import android.widget.DatePicker;
 import android.widget.EditText;
+import android.widget.ListView;
 import android.widget.Toast;
 
 public class AddClaimActivity extends FragmentActivity 
@@ -31,7 +38,19 @@ public class AddClaimActivity extends FragmentActivity
 		 
 		 set_on_click();
 	}
+	//Method to show listview
+	public void onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) 
+	{
+	    inflater.inflate(R.layout.addexpense, container, false);
+	    ListView listview = (ListView) findViewById(R.id.ExpenseList);
+		Collection<Claims> claims = ClaimListController.getClaimsList().getClaimList(); 
+		ArrayList list = new ArrayList<Claims>(claims);
+		ArrayAdapter<Claims> claimAdapter = new ArrayAdapter<Claims>
+				(this, android.R.layout.simple_list_item_1, list);
+		listview.setAdapter(claimAdapter);
+	}
  
+	//Retrieved on January 30,2015 from http://developer.android.com/guide/topics/ui/controls/pickers.html
 	public void showTruitonDatePickerDialog(View v) {
 		
 		if (v == StartDateEdit) {
@@ -62,9 +81,9 @@ public class AddClaimActivity extends FragmentActivity
 		public void onDateSet(DatePicker view, int year, int month, int day) {
 			// Do something with the date chosen by the user
 			if (Start) {
-				StartDateEdit.setText(day + "/" + (month + 1) + "/" + year);
+				StartDateEdit.setText((month + 1) + "/" + day + "/" + year);
 			} else {
-				EndDateEdit.setText(day + "/" + (month + 1) + "/" + year);
+				EndDateEdit.setText((month + 1) + "/" + day + "/" + year);
 			}
 		}
 	}
@@ -87,7 +106,7 @@ public class AddClaimActivity extends FragmentActivity
 	{
 		Toast.makeText(this, "New Claim Made", Toast.LENGTH_SHORT).show();
 		ClaimListController cl = new ClaimListController();
-		EditText textView = (EditText) findViewById(R.id.ClaimName);
+		EditText textView = (EditText) findViewById(R.id.AddClaimName);
 		EditText textView2 = (EditText) findViewById(R.id.ClaimStartDate);
 		EditText textView3 = (EditText) findViewById(R.id.ClaimFinishDate);
 		cl.addClaim(new Claims(textView.getText().toString(),
@@ -95,6 +114,7 @@ public class AddClaimActivity extends FragmentActivity
 		Intent intent = new Intent(AddClaimActivity.this, CurrentClaimActivity.class);
 		startActivity(intent);
 		finish();
+		
 		
 	}
 }

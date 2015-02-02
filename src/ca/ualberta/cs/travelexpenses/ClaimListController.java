@@ -13,7 +13,8 @@ public class ClaimListController
 		return claimsList;
 	}
 
-	public void addClaim(Claims claims) {
+	public void addClaim(Claims claims) 
+	{
 		// TODO Auto-generated method stub
 		getClaimsList().addClaims(claims);
 	}

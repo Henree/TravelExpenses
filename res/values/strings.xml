@@ -9,7 +9,7 @@
     <string name="Edit">Edit</string>
     <string name="NewExpense">Add New Expense</string>
     <string name="NewClaim">Add New Claim</string>
-    <string name="CurrentClaims">Current Claims</string>
+    <string name="CurrentClaims">Existing Claims</string>
     <string name="FinishDate">Finish</string>
     <string name="StartDate">Start</string>
     <string name="Name">Name</string>

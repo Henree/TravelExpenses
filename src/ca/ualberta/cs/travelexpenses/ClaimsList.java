@@ -1,12 +1,14 @@
 package ca.ualberta.cs.travelexpenses;
 
 import java.util.ArrayList;
+import java.util.Collection;
+
 
 public class ClaimsList 
 {
 	protected static ArrayList<Claims> claimsList;
 	
-	public ArrayList<Claims> getClaimList() {
+	public Collection<Claims> getClaimList() {
 		if (claimsList == null) {
 			claimsList = new ArrayList<Claims>();
 		}

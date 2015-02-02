@@ -24,6 +24,16 @@ public class Claims
 		return this.Start + "to" + this.Finish;
 	}
 	
+	public String getStartDate()
+	{
+		return this.Start;
+	}
+	
+	public String getFinishDate()
+	{
+		return this.Finish;
+	}
+	
 	public String toString()
 	{
 		return getName();

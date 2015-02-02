@@ -1,5 +1,5 @@
 /*
- Copyright [2015] [Henry Ha]
+ Copyright 2015 Henry Ha
 
 Licensed under the Apache License, Version 2.0 (the "License");
 you may not use this file except in compliance with the License.
@@ -16,33 +16,35 @@ limitations under the License.
 /*
  This android application is an app that keeps track of your travel claims and expenses
  */
+/*Retrieved on January 26,2015 from https://www.youtube.com/watch?v=VKVYUXNuDDg&feature=youtu.be
+ * 
+ */
+
 package ca.ualberta.cs.travelexpenses;
 
-import java.util.ArrayList;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
-import android.widget.ListView;
 import android.widget.Toast;
 
 public class MainActivity extends Activity {
 
 	public static Claims claim;
-	public ListView lv1;
-	public ClaimsList cl = new ClaimsList();
+	//public ListView lv1;
+	//public ClaimsList cl = new ClaimsList();
 	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_main);
-		ArrayList<Claims> claimslist = cl.getClaimList();
+		/*ArrayList<Claims> claimslist = (ArrayList<Claims>) cl.getClaimList();
 		final ListView lv1 = (ListView) findViewById(R.id.AddClaimName);
 		ClaimsCustomAdapter adapter = new ClaimsCustomAdapter(this, claimslist);
 		lv1.setAdapter(adapter);
-		
+		*/
 	}
 
 	@Override
@@ -64,11 +66,19 @@ public class MainActivity extends Activity {
 		return super.onOptionsItemSelected(item);
 	}
 	
+	public void CurrentClaimScreen(MenuItem menu)
+	{
+		Toast.makeText(this, "Going to Current Claim screen", Toast.LENGTH_SHORT).show();
+		Intent intent = new Intent(MainActivity.this, CurrentClaimActivity.class);
+		startActivity(intent);
+	}
+	
 	public void addclaimbutton(View view)
 	{
-		Toast.makeText(this, "going to claim", Toast.LENGTH_SHORT).show();
+		Toast.makeText(this, "Going to claim", Toast.LENGTH_SHORT).show();
 		Intent intent = new Intent(MainActivity.this, AddClaimActivity.class);
 		startActivity(intent);
 	}
+	
 	
 }

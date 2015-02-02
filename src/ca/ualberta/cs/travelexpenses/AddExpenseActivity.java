@@ -1,6 +1,8 @@
 package ca.ualberta.cs.travelexpenses;
 
+import java.util.ArrayList;
 import java.util.Calendar;
+import java.util.Collection;
 
 import ca.ualberta.cs.travelexpenses.R;
 import android.app.Activity;
@@ -9,11 +11,15 @@ import android.app.Dialog;
 import android.app.DialogFragment;
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.view.ViewGroup;
+import android.widget.ArrayAdapter;
 import android.widget.DatePicker;
 import android.widget.EditText;
+import android.widget.ListView;
 import android.widget.Toast;
 
 public class AddExpenseActivity extends Activity {
@@ -26,6 +32,20 @@ public class AddExpenseActivity extends Activity {
 		setContentView(R.layout.addexpense);
 		Date = (EditText) findViewById(R.id.ExpenseDate);
 		set_on_click();
+	}
+	
+
+	public void onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) 
+	{
+
+	    inflater.inflate(R.layout.addexpense, container, false);
+	    ListView listview = (ListView) findViewById(R.id.ExpenseList);
+		Collection<Expenses> expenses = ExpenseListController.getExpenseList().getExpense(); 
+		ArrayList list = new ArrayList<Expenses>(expenses);
+		ArrayAdapter<Expenses> expenseAdapter = new ArrayAdapter<Expenses>
+				(this, android.R.layout.simple_list_item_1, list);
+		listview.setAdapter(expenseAdapter);
+	    
 	}
 
 	@Override
@@ -94,7 +114,7 @@ public class AddExpenseActivity extends Activity {
 	{
 		Toast.makeText(this, "New Expense Made", Toast.LENGTH_SHORT).show();
 		ExpenseListController el = new ExpenseListController();
-		EditText textView = (EditText) findViewById(R.id.ExpenseName);
+		EditText textView = (EditText) findViewById(R.id.ExpenseCustomName);
 		EditText textView2 = (EditText) findViewById(R.id.ExpenseDate);
 		EditText textView3 = (EditText) findViewById(R.id.ExpenseCat);
 		EditText textView4 = (EditText) findViewById(R.id.ExpenseCost);
@@ -104,8 +124,10 @@ public class AddExpenseActivity extends Activity {
 		el.addExpense(new Expenses(textView.getText().toString(), textView2.getText().toString(), 
 					textView3.getText().toString(), Double.parseDouble(costView),
 					textView5.getText().toString(), textView6.getText().toString()));
+		
 		Intent intent = new Intent(AddExpenseActivity.this, CurrentClaimActivity.class);
 		startActivity(intent);
+		finish();
 	}
 }
 

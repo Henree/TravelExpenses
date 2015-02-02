@@ -34,6 +34,13 @@ public class CurrentClaimActivity extends Activity {
 		}
 		return super.onOptionsItemSelected(item);
 	}
+	public void MainScreen(MenuItem menu)
+	{
+		Toast.makeText(this, "Going to Main screen", Toast.LENGTH_SHORT).show();
+		Intent intent = new Intent(CurrentClaimActivity.this, MainActivity.class);
+		startActivity(intent);
+	}
+	
 	public void newexpense(View view)
 	{
 		Toast.makeText(this, "going to expense", Toast.LENGTH_SHORT).show();
