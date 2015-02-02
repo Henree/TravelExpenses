@@ -45,6 +45,7 @@ public class AddExpenseActivity extends Activity {
 		ArrayAdapter<Expenses> expenseAdapter = new ArrayAdapter<Expenses>
 				(this, android.R.layout.simple_list_item_1, list);
 		listview.setAdapter(expenseAdapter);
+
 	    
 	}
 

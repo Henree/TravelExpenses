@@ -40,12 +40,20 @@ public class MainActivity extends Activity {
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_main);
-		/*ArrayList<Claims> claimslist = (ArrayList<Claims>) cl.getClaimList();
-		final ListView lv1 = (ListView) findViewById(R.id.AddClaimName);
-		ClaimsCustomAdapter adapter = new ClaimsCustomAdapter(this, claimslist);
-		lv1.setAdapter(adapter);
-		*/
 	}
+	
+	/*Method to show listview
+	public void onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) 
+	{
+	    /*inflater.inflate(R.layout.addexpense, container, false);
+	    ListView listview = (ListView) findViewById(R.id.ClaimsList);
+		Collection<Claims> claims = ClaimListController.getClaimsList().getClaimList(); 
+		ArrayList list = new ArrayList<Claims>(claims);
+		ArrayAdapter<Claims> claimAdapter = new ArrayAdapter<Claims>
+				(this, android.R.layout.simple_list_item_1, list);
+		listview.setAdapter(claimAdapter);
+		
+	}*/
 
 	@Override
 	public boolean onCreateOptionsMenu(Menu menu) {
