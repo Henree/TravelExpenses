@@ -38,11 +38,23 @@ public class MainActivity extends Activity {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_main);
 		ListView listview = (ListView) findViewById(R.id.ClaimList);
-		ArrayList<Claims> claims = (ArrayList<Claims>) ClaimListController.getClaimsList()
+		Collection<Claims> claims = ClaimListController.getClaimsList()
 				.getClaims();
-		final ListView lv2 = (ListView) findViewById(R.id.ClaimList);
-		ClaimsCustomAdapter adapter = new ClaimsCustomAdapter(this, claims);
-		lv2.setAdapter(adapter);
+		final ArrayList<Claims> list = new ArrayList<Claims>(claims);
+		final ArrayAdapter<Claims> claimsAdapter = new ArrayAdapter<Claims>
+				(this, android.R.layout.simple_list_item_1, list);
+		listview.setAdapter(claimsAdapter);
+		ClaimListController.getClaimsList().addListener(new ClaimsListener () {
+			public void update()
+			{
+				list.clear();
+				Collection<Claims> claims = ClaimListController.getClaimsList()
+						.getClaims();
+				list.addAll(claims);
+				claimsAdapter.notifyDataSetChanged();
+			}
+		});
+		
 		
 	}
 
